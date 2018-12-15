@@ -6,36 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>通过SourceTree将本地unity工程上传到GitHub上 | ShenHao</title>
+  <title>在unity中动态为button添加带参数的点击事件 | ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言GitHub 是基于 Git 的一个代码托管网站。开发者可以将代码在 GitHub 上和别人共享，当然也可以浏览其它项目的代码。下面介绍的是如何通过SourceTree将本地unity工程上传到GitHub上。">
-<meta name="keywords" content="git,github,sourceTree">
+  <meta name="description" content="前言unity中为UGUI中的button添加点击事件,最笨的方法就是手动在unity面板中填加点击事件,还有一种就是为每一个button在代码中创建一个方法 ,然后动态添加 ,下面介绍的方法是为每一个button动态添加同一个点击事件.来实现button各自不同的功能,代码如下:">
+<meta name="keywords" content="unity,UGUI,button">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过SourceTree将本地unity工程上传到GitHub上">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/index.html">
+<meta property="og:title" content="在unity中动态为button添加带参数的点击事件">
+<meta property="og:url" content="http://yoursite.com/2017/07/15/在unity中动态为button添加带参数的点击事件/index.html">
 <meta property="og:site_name" content="ShenHao">
-<meta property="og:description" content="前言GitHub 是基于 Git 的一个代码托管网站。开发者可以将代码在 GitHub 上和别人共享，当然也可以浏览其它项目的代码。下面介绍的是如何通过SourceTree将本地unity工程上传到GitHub上。">
+<meta property="og:description" content="前言unity中为UGUI中的button添加点击事件,最笨的方法就是手动在unity面板中填加点击事件,还有一种就是为每一个button在代码中创建一个方法 ,然后动态添加 ,下面介绍的方法是为每一个button动态添加同一个点击事件.来实现button各自不同的功能,代码如下:">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit1.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit2.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit3.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit4.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit5.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit6.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit7.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit8.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit9.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit10.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit11.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit12.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit13.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit14.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit15.png">
-<meta property="og:updated_time" content="2018-12-15T13:29:41.236Z">
+<meta property="og:updated_time" content="2018-12-15T12:23:32.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过SourceTree将本地unity工程上传到GitHub上">
-<meta name="twitter:description" content="前言GitHub 是基于 Git 的一个代码托管网站。开发者可以将代码在 GitHub 上和别人共享，当然也可以浏览其它项目的代码。下面介绍的是如何通过SourceTree将本地unity工程上传到GitHub上。">
-<meta name="twitter:image" content="http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit1.png">
+<meta name="twitter:title" content="在unity中动态为button添加带参数的点击事件">
+<meta name="twitter:description" content="前言unity中为UGUI中的button添加点击事件,最笨的方法就是手动在unity面板中填加点击事件,还有一种就是为每一个button在代码中创建一个方法 ,然后动态添加 ,下面介绍的方法是为每一个button动态添加同一个点击事件.来实现button各自不同的功能,代码如下:">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -159,60 +143,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-通过SourceTree将本地unity工程上传到GitHub上" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-在unity中动态为button添加带参数的点击事件" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      通过SourceTree将本地unity工程上传到GitHub上
+      在unity中动态为button添加带参数的点击事件
     </h1>
   
 
         
-        <a href="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/" class="archive-article-date">
-  	<time datetime="2017-04-04T07:21:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
+        <a href="/2017/07/15/在unity中动态为button添加带参数的点击事件/" class="archive-article-date">
+  	<time datetime="2017-07-15T02:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>GitHub 是基于 Git 的一个代码托管网站。开发者可以将代码在 GitHub 上和别人共享，当然也可以浏览其它项目的代码。下面介绍的是<br>如何通过SourceTree将本地unity工程上传到GitHub上。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>unity中为UGUI中的button添加点击事件,最笨的方法就是手动在unity面板中填加点击事件,还有一种就是为每一个button在代码中创建一个方法 ,然后动态添加 ,下面介绍的方法是为每一个button动态添加同一个点击事件.来实现button各自不同的功能,代码如下:</p>
 <a id="more"></a>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>一、1、创建github网站账号（GitHub网站： <a href="https://github.com）。2、安装sourceTree软件。" target="_blank" rel="noopener">https://github.com）。2、安装sourceTree软件。</a></p>
-<p>二、在GitHub网站上新建一个仓库，如下图：</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit1.png" title="创建库">
-<p>三、填写库信息</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit2.png" title="填写库的信息">
-<p>四、找到项目的git地址，并复制</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit3.png" title="复制项目地址">
-<p>五、打开SourceTree将刚才在GitHub上创建得项目克隆到本地</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit4.png" title="克隆项目">
-<p>六、将本地的unity项目中的Assets和Library文件夹拉到刚才创建的SecondGit文件夹中</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit5.png" title="SourceTreeGit5.png">
-<p>此时返回到SourceTree中，会看到刚才拉入文件夹中的文件会显示在未暂存文件区域中去</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit6.png" title="SourceTreeGit6.png">
-<p>接下来提交更新</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit7.png" title="SourceTreeGit7.png">
-<p>提交后会看到有推送提示，如下图</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit8.png" title="推送（可能会有点慢）">
-<p>推送（可能会有点慢）</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit9.png" title="推送（可能会有点慢）">
-<p>此时进入GitHub网站，点进我们刚才新建的库中中，会看到我们刚才提交的更新</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit10.png" title="更新">
-<p>这个时候如果我们在网站中更改里面的东西后（点击下面的Commit Change提交更改），<br>在sourcetree（网站中更新后在sourcetree中会有相应的拉取提示）中只需拉取一下即可将刚才更改的东西拉取到本地</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit11.png" title="更新本地">
+<p>方法一：</p>
+
 <hr>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit12.png" title="更新本地">
-<p>此时，打开刚才本地的工程，找到在网站中更改的代码会看到相应的更新</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit13.png" title="本地已更新">
-<p>同理，本地更新后会在sourcetree中提示有未暂存的文件，提示你提交更新</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit14.png" title="提示更新">
-<p>然后只需要暂存所选或全部，提交，再点击推送即可</p>
-<img src="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/SourceTreeGit15.png" title="提示更新">
-<h1 id="如果我们想从网站中拉取已有的项目，只需执行第五步，即可将项目拉到本地。"><a href="#如果我们想从网站中拉取已有的项目，只需执行第五步，即可将项目拉到本地。" class="headerlink" title="如果我们想从网站中拉取已有的项目，只需执行第五步，即可将项目拉到本地。"></a>如果我们想从网站中拉取已有的项目，只需执行第五步，即可将项目拉到本地。</h1>
+
+<p>方法二；</p>
+
+<hr>
+
       
 
       
@@ -246,15 +206,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">unity</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">UGUI</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sourceTree</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">button</a>
         		</li>
       		
 		</ul>
@@ -310,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/07/15/在unity中动态为button添加带参数的点击事件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/07/15/在unity中动态为button添加带参数的点击事件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          在unity中动态为button添加带参数的点击事件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/08/协程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">协程</div>
+    <a href="/2017/04/04/通过SourceTree将本地unity工程上传到GitHub上/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">通过SourceTree将本地unity工程上传到GitHub上</div>
       <i class="icon-circle-right"></i>
     </a>
   
