@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>不重复输出随机数 | ShenHao</title>
+  <title>移动轨迹--导航射线 | ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言随机从0-9这10个数中不重复输出5个">
-<meta name="keywords" content="unity">
+  <meta name="description" content="前言移动时显示角色与目的地之间的轨迹">
+<meta name="keywords" content="unity,导航,射线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不重复输出随机数">
-<meta property="og:url" content="http://yoursite.com/2018/04/19/不重复输出随机数/index.html">
+<meta property="og:title" content="移动轨迹--导航射线">
+<meta property="og:url" content="http://yoursite.com/2017/12/06/移动轨迹-导航射线/index.html">
 <meta property="og:site_name" content="ShenHao">
-<meta property="og:description" content="前言随机从0-9这10个数中不重复输出5个">
+<meta property="og:description" content="前言移动时显示角色与目的地之间的轨迹">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-15T12:23:32.365Z">
+<meta property="og:updated_time" content="2018-12-15T12:23:32.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不重复输出随机数">
-<meta name="twitter:description" content="前言随机从0-9这10个数中不重复输出5个">
+<meta name="twitter:title" content="移动轨迹--导航射线">
+<meta name="twitter:description" content="前言移动时显示角色与目的地之间的轨迹">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -143,29 +143,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-不重复输出随机数" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-移动轨迹-导航射线" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      不重复输出随机数
+      移动轨迹--导航射线
     </h1>
   
 
         
-        <a href="/2018/04/19/不重复输出随机数/" class="archive-article-date">
-  	<time datetime="2018-04-19T08:36:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-19</time>
+        <a href="/2017/12/06/移动轨迹-导航射线/" class="archive-article-date">
+  	<time datetime="2017-12-06T06:52:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>随机从0-9这10个数中不重复输出5个</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移动时显示角色与目的地之间的轨迹</p>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class NewBehaviourScript : MonoBehaviour &#123;</span><br><span class="line"></span><br><span class="line">ListnumList=<span class="keyword">new</span> List ();</span><br><span class="line"></span><br><span class="line"> int MaxLength;</span><br><span class="line"></span><br><span class="line"> int index;</span><br><span class="line"></span><br><span class="line"> int randomNum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Start () &#123;</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            numList.Add(i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            MaxLength = numList.Count;</span><br><span class="line"></span><br><span class="line">            index = Random.Range(<span class="number">0</span>, MaxLength);</span><br><span class="line"></span><br><span class="line">            randomNum = numList[index];</span><br><span class="line"></span><br><span class="line">            print(randomNum);</span><br><span class="line"></span><br><span class="line">            numList.RemoveAt(index);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class scricubefollow : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//public Transform m_sph;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 自身渲染器组件</span></span><br><span class="line"></span><br><span class="line">LineRenderer m_Line;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自身导航组件</span></span><br><span class="line"></span><br><span class="line">NavMeshAgent m_agent;</span><br><span class="line"></span><br><span class="line">RaycastHit hit = <span class="keyword">new</span> RaycastHit ();</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Awake ()</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 拿到两个组件</span></span><br><span class="line"></span><br><span class="line">m_Line = GetComponent ();</span><br><span class="line"></span><br><span class="line">m_agent = GetComponent ();</span><br><span class="line"></span><br><span class="line"><span class="comment">//m_Line.enabled = false;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Update ()</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 鼠标鼠标点击哪里就去哪里</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (Input.GetMouseButtonDown (<span class="number">0</span>)) &#123;</span><br><span class="line"></span><br><span class="line">Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (Physics.Raycast (ray, out hit)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//让主角前往目的地</span></span><br><span class="line"></span><br><span class="line">m_agent.SetDestination (hit.point);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制线条 (在此处角色走完的路线不会消失)</span></span><br><span class="line"></span><br><span class="line">DrawLine (hit);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绘制线条 (在此处角色走完的路线会消失)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//DrawLine (hit);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> DrawLine (RaycastHit hit)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 绘制线条的核心代码:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1: 告诉我多少拐点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// m_Line.SetVertexCount ();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2 告诉我拐点的位置在哪里</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// m_Line.SetPositions ();</span></span><br><span class="line"></span><br><span class="line">NavMeshPath path = <span class="keyword">new</span> NavMeshPath ();</span><br><span class="line"></span><br><span class="line">m_Line.SetPosition (path.corners.Length, hit.point);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算从导航数据中计算出来所要走的路径信息</span></span><br><span class="line"></span><br><span class="line">m_agent.CalculatePath (hit.point, path);</span><br><span class="line"></span><br><span class="line"><span class="comment">//path.corners</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置要绘制的导航路线的拐点</span></span><br><span class="line"></span><br><span class="line">m_Line.SetVertexCount (path.corners.Length);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置拐点的位置</span></span><br><span class="line"></span><br><span class="line">m_Line.SetPositions (path.corners);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可使用循环来设置各个点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//for (int i = 0; i &lt; path.corners.Length; i++) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//m_Line.SetPosition (i, path.corners [i]);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//激活线性组件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//m_Line.enabled = true;</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -200,6 +200,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">unity</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">导航</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">射线</a>
         		</li>
       		
 		</ul>
@@ -255,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/19/不重复输出随机数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/06/移动轨迹-导航射线/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,9 +277,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/04/19/不重复输出随机数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          不重复输出随机数
+        
+      </div>
+    </a>
   
-    <a href="/2017/12/06/移动轨迹-导航射线/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动轨迹--导航射线</div>
+  
+    <a href="/2017/07/15/在unity中动态为button添加带参数的点击事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在unity中动态为button添加带参数的点击事件</div>
       <i class="icon-circle-right"></i>
     </a>
   
