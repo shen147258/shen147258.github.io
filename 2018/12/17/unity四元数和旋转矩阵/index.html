@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="ShenHao">
 <meta property="og:description" content="unity四元数和旋转矩阵一 四元数Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。 主要介绍几个函数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-17T05:15:24.569Z">
+<meta property="og:updated_time" content="2018-12-17T05:20:17.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShenHao">
 <meta name="twitter:description" content="unity四元数和旋转矩阵一 四元数Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。 主要介绍几个函数">
@@ -150,10 +150,9 @@
         <h1 id="unity四元数和旋转矩阵"><a href="#unity四元数和旋转矩阵" class="headerlink" title="unity四元数和旋转矩阵"></a>unity四元数和旋转矩阵</h1><h2 id="一-四元数"><a href="#一-四元数" class="headerlink" title="一 四元数"></a>一 四元数</h2><p>Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。</p>
 <h5 id="主要介绍几个函数"><a href="#主要介绍几个函数" class="headerlink" title="主要介绍几个函数"></a>主要介绍几个函数</h5><a id="more"></a>
 <p><1> 根据两个向量计算出旋转量，计算出来的旋转量为从fromDirection旋转到toDirection的旋转量</1></p>
-<p>、、、</p>
-<p>static Quaternion FromToRotation(Vector3 fromDirection,Vector3 toDirection)</p>
-<p>static Quaternion LookRotation(Vector3 forward);<br>static Quaternion LookRotation(Vector3 forward,Vector3 upwards);</p>
-<p>、、、</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">​</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">static Quaternion FromToRotation(Vector3 fromDirection,Vector3 toDirection)</span><br><span class="line"></span><br><span class="line">static Quaternion LookRotation(Vector3 forward);</span><br><span class="line">static Quaternion LookRotation(Vector3 forward,Vector3 upwards);</span><br></pre></td></tr></table></figure>
+<p>​<code>javascript</code></p>
 <p>使用指定的向前方向和向上方向来创建四元数</p>
 <p>示例</p>
 <pre><code>Vector3 vr = new Vector3(1,0,0);
@@ -460,14 +459,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sourceTree</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UGUI</a>
               </li>
              
@@ -481,6 +472,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">射线</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sourceTree</a>
               </li>
             
             <div class="clearfix"></div>
