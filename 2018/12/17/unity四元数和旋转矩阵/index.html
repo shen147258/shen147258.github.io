@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: button | ShenHao</title>
+  <title>ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="unity四元数和旋转矩阵一 四元数Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。 主要介绍几个函数">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ShenHao">
-<meta property="og:url" content="http://yoursite.com/tags/button/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/unity四元数和旋转矩阵/index.html">
 <meta property="og:site_name" content="ShenHao">
+<meta property="og:description" content="unity四元数和旋转矩阵一 四元数Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。 主要介绍几个函数">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-17T05:15:24.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShenHao">
+<meta name="twitter:description" content="unity四元数和旋转矩阵一 四元数Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。 主要介绍几个函数">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -138,68 +142,216 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-unity四元数和旋转矩阵" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="unity四元数和旋转矩阵"><a href="#unity四元数和旋转矩阵" class="headerlink" title="unity四元数和旋转矩阵"></a>unity四元数和旋转矩阵</h1><h2 id="一-四元数"><a href="#一-四元数" class="headerlink" title="一 四元数"></a>一 四元数</h2><p>Quaternion中存放了x，y，z，w四个数据成员，可以用下标来进行访问，对应的下标分别是0,1,2,3。</p>
+<h5 id="主要介绍几个函数"><a href="#主要介绍几个函数" class="headerlink" title="主要介绍几个函数"></a>主要介绍几个函数</h5><a id="more"></a>
+<p><1> 根据两个向量计算出旋转量，计算出来的旋转量为从fromDirection旋转到toDirection的旋转量</1></p>
+<p>、、、</p>
+<p>static Quaternion FromToRotation(Vector3 fromDirection,Vector3 toDirection)</p>
+<p>static Quaternion LookRotation(Vector3 forward);<br>static Quaternion LookRotation(Vector3 forward,Vector3 upwards);</p>
+<p>、、、</p>
+<p>使用指定的向前方向和向上方向来创建四元数</p>
+<p>示例</p>
+<pre><code>Vector3 vr = new Vector3(1,0,0);
+Quaternion q1 = Quaternion.LookRotation(vr);
+Debug.Log(q1);
+
+Vector3 vforwardp = new Vector3(0,0,1);        
+Quaternion q2 = Quaternion.FromToRotation(vforwardp ,vr);
+Debug.Log(q2);
+</code></pre><p>这里面q1和q2的值是相同的，q2的计算过程是计算向前向量(vforwardp )到当前向量vr的旋转量，而这就是LookRotation的计算方式。</p>
+<p>而是LookRotation同时使用forward和upward两个参数的时候，就相当于指定了vz和vy两个向量，根据这两个向量可以直接算出对应的vx，然后再用这三个向量去set对应的3×3旋转矩阵的列向量即可获得一个旋转矩阵，再接着可以将其转换到四元数。</p>
+<3>
+
+<p>void SetLookRotation(Vector3 view);<br>void SetLookRotation(Vector3 view,Vector3 up);</p>
+<p>也是根据指定的向前和向上向量创建四元数，本质计算过程和LookRotation一样，只不过LookRotation是Quaternion上的静态函数，而SetLookRotation则是Quaternion的成员函数。</p>
+<4>
+
+<p>static Quaternion RotateTowards(Quaternion from,Quaternion to, float maxDegreesDelta);</p>
+<p>以maxDegreesDelta作为角度步长计算从from到to之间的旋转量</p>
+<5>
+
+<p>static Quaternion AngleAxis(float angle,Vector3 axis);</p>
+<p>根据旋转轴和旋转角度算出四元数</p>
+<p><6>Quaternion.eulerAngles</6></p>
+<p>存放四元数对应的三个轴向的欧拉角，分别是绕x轴、y轴、z轴旋转的角度</p>
+<pre><code>Quaternion q3 = new Quaternion();
+q3.eulerAngles = new Vector3(10, 30, 20);
+Quaternion qx3 = Quaternion.AngleAxis(10,Vector3.right);        
+Quaternion qy3 = Quaternion.AngleAxis(30,Vector3.up);
+Quaternion qz3 = Quaternion.AngleAxis(20,Vector3.forward);
+
+Quaternion qxyz3 = qz3*qy3*qx3;
+</code></pre><p>上面的代码可以得到q3和qxyz3值一样。从这里可以看出unity中旋转顺序也是按先绕x轴旋转，然后y，最后z。unity中对向量应用旋转量使用的是向量右乘，即如下：</p>
+<p>Vector3 newV = qxyz3<em>v=qz3</em>qy3<em>qx3</em>v;<br>二 旋转矩阵</p>
+<p>unity中仅仅提供了一个4×4的矩阵类Matrix4x4，它可以包含位移T、旋转R和伸缩信息。矩阵中的元素都对应一个mxy的公有成员变量，因而要访问单个元素的话可以直接访问其成员。同时也提供了下标访问，如下</p>
+<pre><code>public float this [int row, int column]
+{
+    get
+    {
+        return this [row + column * 4];
+    }
+    set
+    {
+        this [row + column * 4] = value;
+    }
+}
+public float this [int index]
+</code></pre><p>三 四元数和旋转矩阵之间的转换</p>
+<p>unity中没有提供直接的四元数到旋转矩阵的转换，但是使用它们的一些成员函数可以实现两者之间的转换。<br>1 四元数到旋转矩阵</p>
+<p>使用Matrix4x4的成员函数SetTRS</p>
+<p>void SetTRS(Vector3 pos,Quaternion q,Vector3 s);</p>
+<p>示例</p>
+<pre><code>Quaternion q = Quaternion.LookRotation(new Vector3(0,0.5,1));
+Matrix4x4 rot = new Matrix4x4();
+rot.SetTRS(new Vector3(0,0,0),q,new Vector3(1,1,1));
+</code></pre><p>2 旋转矩阵到四元数</p>
+<p>使用Quaternion类的LookRotation函数</p>
+<p>static Quaternion LookRotation(Vector3 forward,Vector3 upwards);</p>
+<p>示例（接上面）：</p>
+<pre><code>Matrix4x4 rot = new Matrix4x4();
+rot.SetTRS(new Vector3(0,0,0),q,new Vector3(1,1,1));
+
+Vector4 vy = rot.GetColumn(1);
+Vector4 vz = rot.GetColumn(2);
+
+Quaternion newQ = Quaternion.LookRotation(new Vector3(vz.x,vz.y,vz.z),new Vector3(vy.x,vy.y,vy.z));
+</code></pre><p>这里的newQ与上面的q等值<br>四 其他</p>
+<p>unity中可以将一个四元数q换算到一个旋转矩阵R，同时将这个q在Ogre中换算到另一个旋转矩阵R1，发现R和R1是相同的。</p>
+<p>这说明虽然unity和Ogre采用的是不同的坐标系，但是对于四元数和旋转矩阵之间的换算是等价的。同时unity中四元数的计算公式也和《三维旋转基础》中的一样。</p>
+</5></4></3>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/15/在unity中动态为button添加带参数的点击事件/" class="archive-article-date">
-  	<time datetime="2017-07-15T02:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/15/在unity中动态为button添加带参数的点击事件/">在unity中动态为button添加带参数的点击事件</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">unity</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">UGUI</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">button</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/17/unity四元数和旋转矩阵/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/19/不重复输出随机数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">不重复输出随机数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -222,9 +374,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
