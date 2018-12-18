@@ -17,7 +17,12 @@
 <meta property="og:description" content="1.实现物品存储到背包">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page1.png">
-<meta property="og:updated_time" content="2018-12-18T07:57:33.879Z">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page2.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page3.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page4.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page5.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/06/unity背包系统/page6.png">
+<meta property="og:updated_time" content="2018-12-18T08:16:47.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unity背包系统">
 <meta name="twitter:description" content="1.实现物品存储到背包">
@@ -166,7 +171,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-实现物品存储到背包"><a href="#1-实现物品存储到背包" class="headerlink" title="1.实现物品存储到背包"></a>1.实现物品存储到背包</h2><a id="more"></a>
-<p>1、把UI“GridPanel”下子物体“GridImage”全部赋值给脚本“GridPanel”的“Grids”，具体如下图<br><img src="/2017/08/06/unity背包系统/page1.png"></p>
+<p>1、把UI“GridPanel”下子物体“GridImage”全部赋值给脚本“GridPanel”的“Grids”，具体如下图<br><img src="/2017/08/06/unity背包系统/page1.png"><br>2、删除场景中的“ItemImage”，给预制体“ItemImage”下的“IitemText”赋值给预制体“ItemImage”上的脚本“ItemImage”的“itemText”，具体如下图<br><img src="/2017/08/06/unity背包系统/page2.png"><br>3、在文件夹“Scripts”下新建一个脚本“KnapsackManager”，然后双击脚本或者右键“Open C# Project”打开脚本，具体如下图<br><img src="/2017/08/06/unity背包系统/page3.png"><br>4、在打开的“KnapsackManager”脚本上编写代码，首先设置变量获取“GridPanel”脚本，设置字典存储物品信息，并实现脚本单例化，然后实现存储物品的接口函数，函数中包含判断物品是否是字典里面的物品，判断背包是否满了，最后把物品生成到背包里，接着实现模拟数据库加载数据，被物品信息存到字典中，具体代码和代码说明如下图</p>
+<img src="/2017/08/06/unity背包系统/page4.png">
+<hr>
+<img src="/2017/08/06/unity背包系统/page5.png">
+<hr>
+<img src="/2017/08/06/unity背包系统/page6.png">
+<p>5、“KnapsackManager”脚本的具体内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line">public class KnapsackManager : MonoBehaviour &#123;   </span><br><span class="line">	public GridPanel gridPanel;  </span><br><span class="line">	private Dictionary&lt;int, Item&gt; itemList;  </span><br><span class="line">	private static KnapsackManager instance;  </span><br><span class="line">	public static KnapsackManager Instance &#123;      </span><br><span class="line">		get &#123;         </span><br><span class="line">				return instance;           </span><br><span class="line">			&#125;    </span><br><span class="line">	&#125;  </span><br><span class="line">	void Awake() &#123;    </span><br><span class="line">		instance = this;      </span><br><span class="line">		this.LoadData();   </span><br><span class="line">	&#125;   </span><br><span class="line">	public void StoreItem(int itemId) &#123;    </span><br><span class="line">		if (!itemList.ContainsKey(itemId)) &#123;   </span><br><span class="line">			return;       </span><br><span class="line">			&#125;       </span><br><span class="line">		Transform emptyGrid = gridPanel.GetEmptyGrid();    </span><br><span class="line">		if (emptyGrid == null) &#123;        </span><br><span class="line">			Debug.Log(&quot;背包已满&quot;);        </span><br><span class="line">			return;      </span><br><span class="line">			&#125;       </span><br><span class="line">		Item item = itemList[itemId];  </span><br><span class="line">		GameObject itemPrefab = Resources.Load&lt;GameObject&gt;(&quot;Prefabs/ItemImage&quot;); </span><br><span class="line">		itemPrefab.GetComponent&lt;ItemImage&gt;().UpdateItem(item.Name);  </span><br><span class="line">		GameObject itemGo = GameObject.Instantiate(itemPrefab);    </span><br><span class="line">		itemGo.transform.SetParent(emptyGrid);     </span><br><span class="line">		itemGo.transform.localPosition = Vector3.zero;   </span><br><span class="line">		itemGo.transform.localScale = Vector3.one;   </span><br><span class="line">	&#125;    //模拟数据库数据加载 </span><br><span class="line">		private void LoadData() &#123;   </span><br><span class="line">			itemList = new Dictionary&lt;int, Item&gt;();     </span><br><span class="line">			Weapon w1 = new Weapon(0, &quot;牛刀&quot;, &quot;牛B的刀&quot;, 20, 10, &quot;&quot;, 100); </span><br><span class="line">			Weapon w2 = new Weapon(1, &quot;羊刀&quot;, &quot;杀羊刀。&quot;, 15, 10, &quot;&quot;, 20); </span><br><span class="line">			Weapon w3 = new Weapon(2, &quot;宝剑&quot;, &quot;大宝剑！&quot;, 120, 50, &quot;&quot;, 500);</span><br><span class="line">			Weapon w4 = new Weapon(3, &quot;军枪&quot;, &quot;可以对敌人射击，很厉害的一把枪。&quot;, 1500, 125, &quot;&quot;, 720); </span><br><span class="line">			Consumable c1 = new Consumable(4, &quot;红瓶&quot;, &quot;加血&quot;, 25, 11, &quot;&quot;, 20, 0);  </span><br><span class="line">			Consumable c2 = new Consumable(5, &quot;蓝瓶&quot;, &quot;加蓝&quot;, 39, 19, &quot;&quot;, 0, 20);  </span><br><span class="line">			Armor a1 = new Armor(6, &quot;头盔&quot;, &quot;保护脑袋！&quot;, 128, 83, &quot;&quot;, 5, 40, 1);  </span><br><span class="line">			Armor a2 = new Armor(7, &quot;护肩&quot;, &quot;上古护肩，锈迹斑斑。&quot;, 1000, 0, &quot;&quot;, 15, 40, 11);   </span><br><span class="line">			Armor a3 = new Armor(8, &quot;胸甲&quot;, &quot;皇上御赐胸甲。&quot;, 153, 0, &quot;&quot;, 25, 30, 11);       </span><br><span class="line">			Armor a4 = new Armor(9, &quot;护腿&quot;, &quot;预防风寒，从腿做起&quot;, 999, 60, &quot;&quot;, 19, 30, 51);     </span><br><span class="line">			itemList.Add(w1.Id, w1);  </span><br><span class="line">			itemList.Add(w2.Id, w2);    </span><br><span class="line">			itemList.Add(w3.Id, w3);    </span><br><span class="line">			itemList.Add(w4.Id, w4);  </span><br><span class="line">			itemList.Add(c1.Id, c1);    </span><br><span class="line">			itemList.Add(c2.Id, c2);     </span><br><span class="line">			itemList.Add(a1.Id, a1);    </span><br><span class="line">			itemList.Add(a2.Id, a2);     </span><br><span class="line">			itemList.Add(a3.Id, a3);     </span><br><span class="line">			itemList.Add(a4.Id, a4); </span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -420,7 +431,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">四元数和旋转矩阵</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -428,7 +439,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">四元数和旋转矩阵</a>
+                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
               </li>
              
               <li class="article-tag-list-item">
