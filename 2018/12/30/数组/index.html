@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/7 | ShenHao</title>
+  <title>ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="数组数组：相同数据类型的成员组成的一组数据。 数组元素整型数组            2 7 4 3 6            浮点型数组    65.3 23.5 75.6 33.2 60.9            数组定义int[] number;float[] scores;string[] names; 数组初始化1、在定义数组后，必须对其进行初始化才能够使用。 2、初始化数组有两种方法：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ShenHao">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/30/数组/index.html">
 <meta property="og:site_name" content="ShenHao">
+<meta property="og:description" content="数组数组：相同数据类型的成员组成的一组数据。 数组元素整型数组            2 7 4 3 6            浮点型数组    65.3 23.5 75.6 33.2 60.9            数组定义int[] number;float[] scores;string[] names; 数组初始化1、在定义数组后，必须对其进行初始化才能够使用。 2、初始化数组有两种方法：">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-30T14:19:56.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShenHao">
+<meta name="twitter:description" content="数组数组：相同数据类型的成员组成的一组数据。 数组元素整型数组            2 7 4 3 6            浮点型数组    65.3 23.5 75.6 33.2 60.9            数组定义int[] number;float[] scores;string[] names; 数组初始化1、在定义数组后，必须对其进行初始化才能够使用。 2、初始化数组有两种方法：">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -138,64 +142,210 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数组" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组：相同数据类型的成员组成的一组数据。</p>
+<h3 id="数组元素"><a href="#数组元素" class="headerlink" title="数组元素"></a>数组元素</h3><p>整型数组        </p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>7</th>
+<th>4</th>
+<th>3</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>浮点型数组</p>
+<table>
+<thead>
+<tr>
+<th>65.3</th>
+<th>23.5</th>
+<th>75.6</th>
+<th>33.2</th>
+<th>60.9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h3><p>int[] number;<br>float[] scores;<br>string[] names;</p>
+<h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><p>1、在定义数组后，必须对其进行初始化才能够使用。<br> 2、初始化数组有两种方法：动态初始化和静态初始化。</p>
+<h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><p>1、不给定初值情况下，各元素取默认值<br> 例：int[] intArray = new int[6];<br> 数值类型初始值为0，布尔类型初值为false，字符串初值为null</p>
+<p>格式为：<br> 数据类型[] 数组名 = new 数据类型[数组长度]{元素1,元素2}；<br> 动态初始化借助new运算符为数组元素分配内存空间，并赋初值.</p>
+<p>2、给定初值情况下，各元素取相应的初值<br> 例：int[] intArray = new int[3]{1,2,3};<br> 或例：int[] intArray = new int[]{1,2,3};<br> 注意：此情况下数组大小不允许为变量</p>
+<h4 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h4><p>静态初始化的格式为：<br> 数据类型[] 数组名 = {元素1，元素2，…，元素n}；<br> 例：int[] myArr = {1,2,3,4,5};<br> 注意：在这种情况下，不能将数组定义和静态初始化分开</p>
+<h3 id="数组元素-1"><a href="#数组元素-1" class="headerlink" title="数组元素"></a>数组元素</h3><p>数组元素的访问：数组名 +下标<br>数组下标：数组元素在数组中的序号。从0开始，到数组总个数-1；下标可以是常量，也可以是变量<br>数组长度：arr.Length表示数组的长度</p>
+<h5 id="数组a"><a href="#数组a" class="headerlink" title="数组a"></a>数组a</h5><table>
+<thead>
+<tr>
+<th>2</th>
+<th>7</th>
+<th>4</th>
+<th>3</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a[0]</td>
+<td>a[1]</td>
+<td>a[2]</td>
+<td>a[3]</td>
+<td>a[4]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1、系统不会检测 数组元素的下标是否越界，编程时，必须保证数组下标不能越界。<br>2、数组是一个整体，不能直接参加运算(=除外)，只能对单个元素进行处理，通常用到数组的地方都会用到循环。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1、数组通常与循环结合使用。<br>2、数组下标从0开始，最大到数组容量-1。<br>3、 一定要注意下标越界问题。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/06/unity四元数和旋转矩阵/" class="archive-article-date">
-  	<time datetime="2018-07-06T05:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/06/unity四元数和旋转矩阵/">unity四元数和旋转矩阵</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">四元数和旋转矩阵</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/30/数组/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/06/unity四元数和旋转矩阵/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">unity四元数和旋转矩阵</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,8 +368,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -140,6 +140,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组：相同数据类型的成员组成的一组数据。</p>
+<h3 id="数组元素"><a href="#数组元素" class="headerlink" title="数组元素"></a>数组元素</h3><p>整型数组        </p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>7</th>
+<th>4</th>
+<th>3</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>浮点型数组</p>
+<table>
+<thead>
+<tr>
+<th>65.3</th>
+<th>23.5</th>
+<th>75.6</th>
+<th>33.2</th>
+<th>60.9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h3><p>int[] number;<br>float[] scores;<br>string[] names;</p>
+<h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><p>1、在定义数组后，必须对其进行初始化才能够使用。<br> 2、初始化数组有两种方法：动态初始化和静态初始化。</p>
+<h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><p>1、不给定初值情况下，各元素取默认值<br> 例：int[] intArray = new int[6];<br> 数值类型初始值为0，布尔类型初值为false，字符串初值为null</p>
+<p>格式为：<br> 数据类型[] 数组名 = new 数据类型[数组长度]{元素1,元素2}；<br> 动态初始化借助new运算符为数组元素分配内存空间，并赋初值.</p>
+<p>2、给定初值情况下，各元素取相应的初值<br> 例：int[] intArray = new int[3]{1,2,3};<br> 或例：int[] intArray = new int[]{1,2,3};<br> 注意：此情况下数组大小不允许为变量</p>
+<h4 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h4><p>静态初始化的格式为：<br> 数据类型[] 数组名 = {元素1，元素2，…，元素n}；<br> 例：int[] myArr = {1,2,3,4,5};<br> 注意：在这种情况下，不能将数组定义和静态初始化分开</p>
+<h3 id="数组元素-1"><a href="#数组元素-1" class="headerlink" title="数组元素"></a>数组元素</h3><p>数组元素的访问：数组名 +下标<br>数组下标：数组元素在数组中的序号。从0开始，到数组总个数-1；下标可以是常量，也可以是变量<br>数组长度：arr.Length表示数组的长度</p>
+<h5 id="数组a"><a href="#数组a" class="headerlink" title="数组a"></a>数组a</h5><table>
+<thead>
+<tr>
+<th>2</th>
+<th>7</th>
+<th>4</th>
+<th>3</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a[0]</td>
+<td>a[1]</td>
+<td>a[2]</td>
+<td>a[3]</td>
+<td>a[4]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1、系统不会检测 数组元素的下标是否越界，编程时，必须保证数组下标不能越界。<br>2、数组是一个整体，不能直接参加运算(=除外)，只能对单个元素进行处理，通常用到数组的地方都会用到循环。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1、数组通常与循环结合使用。<br>2、数组下标从0开始，最大到数组容量-1。<br>3、 一定要注意下标越界问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-unity四元数和旋转矩阵" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,11 +290,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">四元数和旋转矩阵</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">四元数和旋转矩阵</a>
         		</li>
       		
 		</ul>
@@ -325,11 +438,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		
 		</ul>
@@ -922,7 +1035,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">四元数和旋转矩阵</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -930,11 +1043,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">unity</a>
+                <a href="javascript:void(0)" class="js-tag color4">四元数和旋转矩阵</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">unity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,10 +1067,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导航</a>
               </li>
              
@@ -962,15 +1075,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sourceTree</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
             
             <div class="clearfix"></div>
