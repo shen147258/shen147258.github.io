@@ -140,6 +140,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-cocoscreator Http、WebSocket、SocketIO用法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cocoscreator-Http、WebSocket、SocketIO用法"><a href="#cocoscreator-Http、WebSocket、SocketIO用法" class="headerlink" title="cocoscreator Http、WebSocket、SocketIO用法"></a>cocoscreator Http、WebSocket、SocketIO用法</h1><p>在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。 </p>
+<p>HTTP：</p>
+<p>定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同的应用。<br>​    HTTP是一个属于应用层的面向对象的协议。由于其简洁，快速的方式。适用于分布式超文本信息传输。<br>​    HTTP协议共定义了8种请求方法，OPTIONS,HEAD,GET,POST,PUT,DELETE,TRACE和CONNECT.作为Web服务器，至少需实现GET和HEAD方法，其他方法都是可选的。<br>​    GET方法是向指定的资源发出去请求，发送的信息显示在URL后面。GET方法应该只用在读取数据，如静态图片等数据。<br>​    POST方法是向指定资源提交数据，请求服务器进行处理。<br>​    GET方法像是使用明信片给别人写信，“信内容”写在外面，接触到的人都可以看到，不安全。</p>
+<p>在这里，使用XMLHttpRequest对象开发客户端，下面了解一下它的属性：</p>
+<p>1、open() 与服务器连接，创建新的连接请求。</p>
+<p>2、send() 向服务器发送请求。</p>
+<p>3、abort()退出当前请求</p>
+<p>4、readyState属性，提供当前请求的状态，其中4表示准备就绪。</p>
+<p>5、status属性，提供当前的HTTP请求状态码，其中200表示请求成功。</p>
+<p>6、responseText属性，服务器返回的请求响应文本。</p>
+<p>7、onreadystatechange属性，设置回调函数。</p>
+<p>其中，open和send函数，以及onreadystatechange属性是http请求的关键。</p>
+<p>open函数有5个参数可以使用。(method,url,async,user,password)</p>
+<p>method,是指发送请求的类型，一般为GET或POST</p>
+<p>url,要请求的链接url</p>
+<p>async,是否为异步请求，该参数可选，默认是true</p>
+<p>user,如果该请求需要身份验证，这里指定用户名，无默认值</p>
+<p>password,,如果该请求需要身份验证，这里指定密码，无默认值</p>
+<h5 id="XML-HttpRequest中有5种就绪状态："><a href="#XML-HttpRequest中有5种就绪状态：" class="headerlink" title="XML HttpRequest中有5种就绪状态："></a>XML HttpRequest中有5种就绪状态：</h5><p>1、0：请求没有发出，在调用open()函数之前为该状态</p>
+<p>2、1：请求已经建立但还没有发出，在调用send()函数之前为该状态</p>
+<p>3、2：请求已经发出正在处理中</p>
+<p>4、3：请求已经处理，响应中通常有部分数据可用，但是服务器还没有完成响应</p>
+<p>5、4：响应已经完成，可以访问服务器响应并使用它</p>
+<h5 id="常见的HTTP状态码如下："><a href="#常见的HTTP状态码如下：" class="headerlink" title="常见的HTTP状态码如下："></a>常见的HTTP状态码如下：</h5><p>401：表示所访问数据禁止访问</p>
+<p>403：表示所访问数据收到保护</p>
+<p>404：表示错误的URL请求，表示请求的服务器资源不存在</p>
+<p>200：表示一切顺利</p>
+<p>如果就绪状态是4而且状态码是200即可处理服务器的数据</p>
+<p>基础知识了解完毕，下面开始撸代码：</p>
+<p>先是get请求：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-unity四元数和旋转矩阵" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -325,11 +398,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		
 		</ul>
@@ -481,11 +554,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unity背包系统</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unity背包系统</a>
         		</li>
       		
 		</ul>
@@ -829,78 +902,6 @@
 
 
   
-    <article id="post-数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/数组/">数组</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/16/数组/" class="archive-article-date">
-  	<time datetime="2016-03-16T03:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数组：相同数据类型的成员组成的一组数据。<br>
-        
-          <a class="article-more-a" href="/2016/03/16/数组/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">c#</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -915,7 +916,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Shen
+    		&copy; 2019 Shen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -998,7 +999,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,31 +1011,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sourceTree</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">unity</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UGUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">button</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">协程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">c#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,7 +1035,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">UGUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">button</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sourceTree</a>
               </li>
             
             <div class="clearfix"></div>

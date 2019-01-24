@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/8 | ShenHao</title>
+  <title>ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ShenHao">
-<meta property="og:url" content="http://yoursite.com/archives/2017/08/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/01/24/cocoscreator Http、WebSocket、SocketIO用法/index.html">
 <meta property="og:site_name" content="ShenHao">
+<meta property="og:description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-24T12:16:01.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShenHao">
+<meta name="twitter:description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -138,64 +142,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-cocoscreator Http、WebSocket、SocketIO用法" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cocoscreator-Http、WebSocket、SocketIO用法"><a href="#cocoscreator-Http、WebSocket、SocketIO用法" class="headerlink" title="cocoscreator Http、WebSocket、SocketIO用法"></a>cocoscreator Http、WebSocket、SocketIO用法</h1><p>在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。 </p>
+<p>HTTP：</p>
+<p>定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同的应用。<br>​    HTTP是一个属于应用层的面向对象的协议。由于其简洁，快速的方式。适用于分布式超文本信息传输。<br>​    HTTP协议共定义了8种请求方法，OPTIONS,HEAD,GET,POST,PUT,DELETE,TRACE和CONNECT.作为Web服务器，至少需实现GET和HEAD方法，其他方法都是可选的。<br>​    GET方法是向指定的资源发出去请求，发送的信息显示在URL后面。GET方法应该只用在读取数据，如静态图片等数据。<br>​    POST方法是向指定资源提交数据，请求服务器进行处理。<br>​    GET方法像是使用明信片给别人写信，“信内容”写在外面，接触到的人都可以看到，不安全。</p>
+<p>在这里，使用XMLHttpRequest对象开发客户端，下面了解一下它的属性：</p>
+<p>1、open() 与服务器连接，创建新的连接请求。</p>
+<p>2、send() 向服务器发送请求。</p>
+<p>3、abort()退出当前请求</p>
+<p>4、readyState属性，提供当前请求的状态，其中4表示准备就绪。</p>
+<p>5、status属性，提供当前的HTTP请求状态码，其中200表示请求成功。</p>
+<p>6、responseText属性，服务器返回的请求响应文本。</p>
+<p>7、onreadystatechange属性，设置回调函数。</p>
+<p>其中，open和send函数，以及onreadystatechange属性是http请求的关键。</p>
+<p>open函数有5个参数可以使用。(method,url,async,user,password)</p>
+<p>method,是指发送请求的类型，一般为GET或POST</p>
+<p>url,要请求的链接url</p>
+<p>async,是否为异步请求，该参数可选，默认是true</p>
+<p>user,如果该请求需要身份验证，这里指定用户名，无默认值</p>
+<p>password,,如果该请求需要身份验证，这里指定密码，无默认值</p>
+<h5 id="XML-HttpRequest中有5种就绪状态："><a href="#XML-HttpRequest中有5种就绪状态：" class="headerlink" title="XML HttpRequest中有5种就绪状态："></a>XML HttpRequest中有5种就绪状态：</h5><p>1、0：请求没有发出，在调用open()函数之前为该状态</p>
+<p>2、1：请求已经建立但还没有发出，在调用send()函数之前为该状态</p>
+<p>3、2：请求已经发出正在处理中</p>
+<p>4、3：请求已经处理，响应中通常有部分数据可用，但是服务器还没有完成响应</p>
+<p>5、4：响应已经完成，可以访问服务器响应并使用它</p>
+<h5 id="常见的HTTP状态码如下："><a href="#常见的HTTP状态码如下：" class="headerlink" title="常见的HTTP状态码如下："></a>常见的HTTP状态码如下：</h5><p>401：表示所访问数据禁止访问</p>
+<p>403：表示所访问数据收到保护</p>
+<p>404：表示错误的URL请求，表示请求的服务器资源不存在</p>
+<p>200：表示一切顺利</p>
+<p>如果就绪状态是4而且状态码是200即可处理服务器的数据</p>
+<p>基础知识了解完毕，下面开始撸代码：</p>
+<p>先是get请求：</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/06/unity背包系统/" class="archive-article-date">
-  	<time datetime="2017-08-06T07:27:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/06/unity背包系统/">unity背包系统</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unity背包系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/24/cocoscreator Http、WebSocket、SocketIO用法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/06/unity四元数和旋转矩阵/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">unity四元数和旋转矩阵</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
