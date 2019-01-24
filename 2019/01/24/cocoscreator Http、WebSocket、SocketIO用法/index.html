@@ -8,17 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ShenHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
+  <meta name="description" content="title: cocoscreator Http、WebSocket、SocketIO用法date: 2019-01-24 20:24:40tags: [JS] 在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ShenHao">
 <meta property="og:url" content="http://yoursite.com/2019/01/24/cocoscreator Http、WebSocket、SocketIO用法/index.html">
 <meta property="og:site_name" content="ShenHao">
-<meta property="og:description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
+<meta property="og:description" content="title: cocoscreator Http、WebSocket、SocketIO用法date: 2019-01-24 20:24:40tags: [JS] 在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-24T12:16:01.067Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/httpget.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/httppost.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/timeout.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/websocket.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/SocketIO.png">
+<meta property="og:updated_time" content="2019-01-24T12:43:18.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ShenHao">
-<meta name="twitter:description" content="cocoscreator Http、WebSocket、SocketIO用法在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。  HTTP： 定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同">
+<meta name="twitter:description" content="title: cocoscreator Http、WebSocket、SocketIO用法date: 2019-01-24 20:24:40tags: [JS] 在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/httpget.png">
   
     <link rel="alternative" href="/atom.xml" title="ShenHao" type="application/atom+xml">
   
@@ -147,9 +153,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="cocoscreator-Http、WebSocket、SocketIO用法"><a href="#cocoscreator-Http、WebSocket、SocketIO用法" class="headerlink" title="cocoscreator Http、WebSocket、SocketIO用法"></a>cocoscreator Http、WebSocket、SocketIO用法</h1><p>在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。 </p>
-<p>HTTP：</p>
-<p>定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同的应用。<br>​    HTTP是一个属于应用层的面向对象的协议。由于其简洁，快速的方式。适用于分布式超文本信息传输。<br>​    HTTP协议共定义了8种请求方法，OPTIONS,HEAD,GET,POST,PUT,DELETE,TRACE和CONNECT.作为Web服务器，至少需实现GET和HEAD方法，其他方法都是可选的。<br>​    GET方法是向指定的资源发出去请求，发送的信息显示在URL后面。GET方法应该只用在读取数据，如静态图片等数据。<br>​    POST方法是向指定资源提交数据，请求服务器进行处理。<br>​    GET方法像是使用明信片给别人写信，“信内容”写在外面，接触到的人都可以看到，不安全。</p>
+        <p>title: cocoscreator Http、WebSocket、SocketIO用法<br>date: 2019-01-24 20:24:40<br>tags: [JS]</p>
+<p>在项目中，主要使用两种网络操作，短连接http和长连接websocket，下面就对这两种进行详细说明。 </p>
+<a id="more"></a>
+<h4 id="HTTP："><a href="#HTTP：" class="headerlink" title="HTTP："></a>HTTP：</h4><p>定义：HTTP是超文本传输协议，Internet的基本协议是TCP/IP，目前广泛采用的是HTTP、HTTPS、FTP、Archie Gopher等是建立在TCP/IP之上的应用层协议，不同的协议对应着不同的应用。<br>​    HTTP是一个属于应用层的面向对象的协议。由于其简洁，快速的方式。适用于分布式超文本信息传输。<br>​    HTTP协议共定义了8种请求方法，OPTIONS,HEAD,GET,POST,PUT,DELETE,TRACE和CONNECT.作为Web服务器，至少需实现GET和HEAD方法，其他方法都是可选的。<br>​    GET方法是向指定的资源发出去请求，发送的信息显示在URL后面。GET方法应该只用在读取数据，如静态图片等数据。<br>​    POST方法是向指定资源提交数据，请求服务器进行处理。<br>​    GET方法像是使用明信片给别人写信，“信内容”写在外面，接触到的人都可以看到，不安全。</p>
 <p>在这里，使用XMLHttpRequest对象开发客户端，下面了解一下它的属性：</p>
 <p>1、open() 与服务器连接，创建新的连接请求。</p>
 <p>2、send() 向服务器发送请求。</p>
@@ -176,7 +183,25 @@
 <p>200：表示一切顺利</p>
 <p>如果就绪状态是4而且状态码是200即可处理服务器的数据</p>
 <p>基础知识了解完毕，下面开始撸代码：</p>
-<p>先是get请求：</p>
+<h5 id="先是get请求："><a href="#先是get请求：" class="headerlink" title="先是get请求："></a>先是get请求：</h5><img src="/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/httpget.png" title="httpget">
+<h5 id="然后post请求："><a href="#然后post请求：" class="headerlink" title="然后post请求："></a>然后post请求：</h5><img src="/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/httppost.png" title="httppost">
+<p>其实总体看过来就很清晰了，首先得到XMLHttpRequest实例，然后通过open打开链接，然后监听下连接状态变化，在readyState=4而且status=200时，链接成功，这时候就可以得到网络的数据了。最后别忘了，要send一下。PS：如果下发数据是string类型，需要转下json，然后就可以当做表来用了。</p>
+<p>当然，post和get有些许区别，比如参数，设置头等.</p>
+<p>对于服务器长时间不响应的处理，直接撸：</p>
+<img src="/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/timeout.png" title="timeout">
+<p>在搜索资料的时候，遇到有人说跨域访问问题，网络访问的时候出现了No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘<a href="http://localhost:63342&#39;" target="_blank" rel="noopener">http://localhost:63342&#39;</a> is therefore not allowed access.的报错，这是因为浏览器不能跨域访问，我们在服务端找到这个要请求的文件：设置一下header</p>
+<p>[php] view plain copy</p>
+<p>&lt;?php   </p>
+<p>header(“Access-Control-Allow-Origin : *”);  </p>
+<p>echo “I Love you”  </p>
+<p>?&gt;  </p>
+<p>这样，就成功返回了数据？但是，必须改编码为UTF-8 无rom格式！</p>
+<h4 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket:"></a>WebSocket:</h4><p>请移步<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket，这片文档详细的介绍了websocket的内容" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket，这片文档详细的介绍了websocket的内容</a></p>
+<p>准备撸代码：</p>
+<img src="/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/websocket.png" title="websocket">
+<h4 id="SocketIO"><a href="#SocketIO" class="headerlink" title="SocketIO:"></a>SocketIO:</h4><p>详解教程，<a href="https://www.cnblogs.com/lxxhome/p/5980615.html这一篇可以看看。" target="_blank" rel="noopener">https://www.cnblogs.com/lxxhome/p/5980615.html这一篇可以看看。</a></p>
+<img src="/2019/01/24/cocoscreator%20Http、WebSocket、SocketIO用法/SocketIO.png" title="SocketIO">
+<p>其实后面两种很类似，都是创建链接，然后监听。</p>
 
       
 
@@ -410,6 +435,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">unity</a>
               </li>
              
@@ -418,7 +447,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">unity背包系统</a>
+                <a href="javascript:void(0)" class="js-tag color5">UGUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">button</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,14 +464,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">射线</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">UGUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">button</a>
               </li>
              
               <li class="article-tag-list-item">
